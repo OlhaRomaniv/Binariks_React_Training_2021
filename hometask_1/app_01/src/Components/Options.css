@@ -1,0 +1,25 @@
+.Options-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.Options-select {
+    display: flex;
+    flex-direction: row;
+}
+
+select,
+button {
+    padding: 1rem 3rem;
+    margin: 1rem;
+    cursor: pointer;
+    background-color: #ddd;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: #2a364f;
+}
+
+button:hover {
+    background-color: #e8c657;
+}

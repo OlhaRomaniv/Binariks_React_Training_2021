@@ -1,25 +1,26 @@
 
-import './App.css';
-import Selectors from "./Selectors"
-import React, { Component } from 'react'
+import "./Main.css";
+import React, {useState, useEffect} from 'react';
+import Options from './Options';
 
-export default class Main extends Component {
-  constructor(props){
-    super(props);
-    this.setDescription.bind(this)
-    this.state = {
-      description: 'Initial Description'
-    }
-  }
-  setDescription = (newDes) => {
-    this.setState({description: newDes})
-  }
-  render() {
-    return (
-      <div>
-        <h1>{this.state.description}</h1>
-        <Selectors setDescription = {this.setDescription}/>
+export default function Main() {
+  const [description, setDescription] = useState('Initial Description')
+   useEffect(() => {
+   const data = window.localStorage.getItem('selected')
+    setDescription(JSON.parse(data))
+   }, [])
+   useEffect(() => {
+     window.localStorage.setItem('selected', JSON.stringify(description))
+   })
+  return (
+      <div className='Main'>
+        <header className="Main-header">
+          <h2>Select the description</h2>
+        </header>
+        <h1>{description}</h1>
+        <Options handler = {(description) =>{
+    setDescription(description)}} clear = {()=> setDescription('Initial Description')}/>
       </div>
-    )
-  }
+  )
 }
+

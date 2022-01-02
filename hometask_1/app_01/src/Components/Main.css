@@ -1,0 +1,14 @@
+.Main {
+    background-color: #2a364f;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: #ddd;
+    padding-top: 140px;
+}
+
+h1 {
+    color: #e8c657;
+}
