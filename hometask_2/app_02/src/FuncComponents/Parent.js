@@ -1,7 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Child from './Child'
 export default function Parent() {
   const [number, setNumber] = useState(0);
+  const prevNumber = useRef(0);
+  
+  useEffect(()=>{
+    prevNumber.current = number
+  },[number]
+  )
   useEffect(() => {setInterval(() => {
     setNumber(Math.floor((Math.random() * 100) + 1))
     }, 5000);
@@ -9,7 +15,7 @@ export default function Parent() {
   }, []);
   return(
     <div>
-      <Child randomNumber = {number}/>
+      <Child randomNumber = {number} prevState = {prevNumber.current}/>
     </div>
   )
 }
