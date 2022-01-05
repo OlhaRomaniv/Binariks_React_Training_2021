@@ -1,6 +1,6 @@
 
 import React, {useState, useEffect, useRef} from 'react';
-import './Child.css'
+import './Child.scss'
 export default function Child(props) {
     const ref = useRef(null);
     useEffect(() => {
@@ -11,8 +11,10 @@ export default function Child(props) {
         }
       });
     return (
-        <div /*className= {props.prevState>props.randomNumber ? 'One':'Two'}*/ ref={ref}>
+        <div className='Wrapper'>
+        <div ref={ref}>
             <p>{props.randomNumber}</p>
+        </div>
         </div>
     )
 }
