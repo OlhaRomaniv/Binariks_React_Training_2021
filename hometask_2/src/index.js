@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Parent from './FuncComponents/Parent';
+import FuncParent from './FuncComponents/FuncParent';
+import ClassParent from './ClassComponents/ClassParent'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Parent/>
+    <FuncParent/>
+    <ClassParent/>
   </React.StrictMode>,
   document.getElementById('root')
 );
