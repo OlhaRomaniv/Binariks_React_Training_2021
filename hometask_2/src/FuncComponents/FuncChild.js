@@ -5,9 +5,9 @@ export default function Child( {randomNumber, prevState}) {
     const ref = useRef(null);
     useEffect(() => {
         if (randomNumber > prevState) {
-          ref.current.classList = 'One';
+          ref.current.classList = 'Top';
         }else if (randomNumber < prevState){
-            ref.current.classList = 'Two';
+            ref.current.classList = 'Bottom';
         }
       });
     return (

@@ -8,10 +8,10 @@ export default class Child extends Component {
       }
     componentDidUpdate(prevProps) {
         if (prevProps.randomNumber< this.props.randomNumber) {
-            this.ref.current.classList = 'One';
+            this.ref.current.classList = 'Top';
         }
         else if (prevProps.randomNumber> this.props.randomNumber) {
-            this.ref.current.classList = 'Two';
+            this.ref.current.classList = 'Bottom';
         }
         
     }
