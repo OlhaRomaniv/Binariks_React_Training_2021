@@ -20,7 +20,7 @@ export default class Child extends Component {
         return (
             <div className='Wrapper'>
                 <div ref={this.ref}>
-                <p>{this.props.randomNumber}</p>
+                    <p>{this.props.randomNumber}</p>
                 </div>
             </div>
         )
