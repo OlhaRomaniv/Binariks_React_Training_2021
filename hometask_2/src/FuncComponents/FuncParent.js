@@ -5,12 +5,13 @@ export default function Parent() {
   const prevNumber = useRef(0);
   useEffect(()=>{
     prevNumber.current = number;
-  },[number]
-  )
+  },[number])
+
   useEffect(() => {setInterval(() => {
     setNumber(Math.floor((Math.random() * 100) + 1));
     }, 5000);
   }, []);
+  
   return(
     <div>
       <Child randomNumber = {number} prevState = {prevNumber.current}/>
