@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import './App.css'
 
-function useMobileSize() {
+function useMobileCheck() {
     const [width, setWidth] = useState(window.innerWidth);
     useEffect(() => {
         const resize = () => {
@@ -11,15 +12,15 @@ function useMobileSize() {
             window.removeEventListenerr("resize", resize);
         }
     }, []);
-    return width < 450 ? "true": "false";
+    return width < 450 ? "true" : "false";
 }
 
 function App() {
-    const isMobile = useMobileSize();
+    const isMobile = useMobileCheck();
     return (
         <div className="App">
-        <p>Device is mobile: {isMobile}.</p>
-         </div>
+            <h1>Device is mobile: {isMobile}.</h1>
+        </div>
     );
 }
 
