@@ -4,15 +4,15 @@ import './App.css'
 function useMobileCheck() {
     const [width, setWidth] = useState(window.innerWidth);
     useEffect(() => {
-        const resize = () => {
+        const resizeWidth = () => {
             setWidth(window.innerWidth);
         };
-        window.addEventListener("resize", resize);
+        window.addEventListener("resize", resizeWidth);
         return () => {
-            window.removeEventListenerr("resize", resize);
+            window.removeEventListenerr("resize", resizeWidth);
         }
     }, []);
-    return width < 450 ? "true" : "false";
+    return width < 425 ? "true" : "false";
 }
 
 function App() {
