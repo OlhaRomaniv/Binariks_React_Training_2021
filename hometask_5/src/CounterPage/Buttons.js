@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useCallback, useState, memo } from 'react';
 
-export default function Buttons({increment, decrement, colour}) {
+function Buttons({changeColor, increment, decrement}) {
+  console.log('child render')
   return (
       <div>
         <button onClick={increment}>Increment</button>
         <button onClick={decrement}>Decrement</button>
-        <button onClick={colour}>Change color</button>
+        <button onClick={changeColor}>Change color</button>
       </div>
   )
 }
+export default memo(Buttons)
