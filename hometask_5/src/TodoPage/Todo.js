@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function Todo({todo, removeTask}) {
+function Todo({todo, removeTask}) {
+  console.log('A todo render')
   return (
   <div key={todo.id}>
-<div>{todo.task}</div>
-<div className="item-delete" onClick={() => removeTask(todo.id)}>
-                X
-            </div>
+      <div>{todo.task}</div>
+      <div  onClick={() => removeTask(todo.id)}> X</div>
   </div>
   );
 }
+export default Todo

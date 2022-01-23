@@ -1,36 +1,44 @@
-import React, {useState} from 'react';
-import Todo from './Todo';
+import React, {useState, Suspense} from 'react';
 import TodoForm from './TodoForm'
-export default function TodoList() {
-    const [todos, setTodos] = useState([]);
 
+const Todo = React.lazy(() => import ('./Todo'));
+
+export default function TodoList() {
+  console.log('List render')
+    const [todos, setTodos] = useState([]);
+    
     const addTask = (input) => {
+      console.log('Add task render')
         if(input) {
-          const newItem = {
-            id: Math.floor(Math.random() * 10000),
-            task: input,
-            complete: false
+          const newTodo = {
+            id: Math.floor(Math.random() * 100),
+            task: input
           }
-          setTodos([...todos, newItem])
+          setTodos([...todos, newTodo])
         }
       };
 
       const removeTask = (id) => {
+        console.log('Remove render')
         setTodos([...todos.filter((todo) => todo.id !== id)])
       };
 
-    return (
-    <div className='TodoList'> 
-<TodoForm addTask={addTask} />
-      {todos.map((todo) => {
+      const listItems = todos.map((todo) => {
         return (
           <Todo
-            todo={todo}
             key={todo.id}
+            todo={todo}
             removeTask={removeTask}
             />
         )
-      })}
-    </div>
+      });
+
+    return (
+      <div className='TodoList'> 
+        <TodoForm addTask={addTask} />
+        <Suspense fallback={<div>Loading...</div>}>
+          {listItems}
+        </Suspense>
+      </div>
     );
 }

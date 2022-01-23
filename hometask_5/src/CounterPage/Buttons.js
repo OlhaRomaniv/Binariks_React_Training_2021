@@ -1,4 +1,4 @@
-import React, { useCallback, useState, memo } from 'react';
+import React, { memo } from 'react';
 
 function Buttons({changeColor, increment, decrement}) {
   console.log('child render')
