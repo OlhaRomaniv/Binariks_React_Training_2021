@@ -8,8 +8,10 @@ function App() {
   return (
     <div  className='App'>
     <Router>
-          <Link to='/TodoPage/TodoList'>ToDo List</Link>
+      <div className='Links'>
+          <Link to='/TodoPage/TodoList'>ToDo</Link>
           <Link to='/CounterPage/Counter'>Counter</Link>
+      </div>
         <Suspense fallback={<h3>Loading...</h3>}>
           <Routes>
             <Route path='/TodoPage/TodoList' element={<TodoList/>} />

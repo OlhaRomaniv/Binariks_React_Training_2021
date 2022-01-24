@@ -1,11 +1,10 @@
 import React from 'react';
 
-function Todo({todo, removeTask}) {
-  console.log('A todo render')
+function Todo({todo, removeTodo}) {
   return (
-  <div key={todo.id}>
+  <div className='TodoItem' key={todo.id}>
+      <div className='Remove' onClick={() => removeTodo(todo.id)}> X</div>
       <div>{todo.task}</div>
-      <div  onClick={() => removeTask(todo.id)}> X</div>
   </div>
   );
 }

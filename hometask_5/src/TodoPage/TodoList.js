@@ -1,14 +1,12 @@
 import React, {useState, Suspense} from 'react';
-import TodoForm from './TodoForm'
+import TodoForm from './TodoForm';
 
 const Todo = React.lazy(() => import ('./Todo'));
 
 export default function TodoList() {
-  console.log('List render')
     const [todos, setTodos] = useState([]);
     
-    const addTask = (input) => {
-      console.log('Add task render')
+    const addTodo = (input) => {
         if(input) {
           const newTodo = {
             id: Math.floor(Math.random() * 100),
@@ -18,8 +16,7 @@ export default function TodoList() {
         }
       };
 
-      const removeTask = (id) => {
-        console.log('Remove render')
+      const removeTodo = (id) => {
         setTodos([...todos.filter((todo) => todo.id !== id)])
       };
 
@@ -28,14 +25,15 @@ export default function TodoList() {
           <Todo
             key={todo.id}
             todo={todo}
-            removeTask={removeTask}
+            removeTodo={removeTodo}
             />
         )
       });
 
     return (
       <div className='TodoList'> 
-        <TodoForm addTask={addTask} />
+      <p>Todo page</p>
+        <TodoForm addTodo={addTodo} />
         <Suspense fallback={<div>Loading...</div>}>
           {listItems}
         </Suspense>

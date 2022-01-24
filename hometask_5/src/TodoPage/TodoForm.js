@@ -1,19 +1,16 @@
 import React, {useState} from 'react';
 
- function TodoForm({ addTask }) {
-    console.log('Form render')
+ function TodoForm({ addTodo }) {
     const [input, setInput] = useState('');
 
     const handleChange = (e) => {
         setInput(e.currentTarget.value)
-        console.log('HandleChange')
     };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        addTask(input)
+        addTodo(input)
         setInput("")
-        console.log('Submit render')
     };
 
   return (

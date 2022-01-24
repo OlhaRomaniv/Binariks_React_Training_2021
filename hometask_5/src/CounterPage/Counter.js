@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
 import Buttons from './Buttons';
-import './Counter.css'
 
 function Counter() {
     const [count, setCount] = useState(0);
@@ -8,23 +7,20 @@ function Counter() {
 
     const increment = useCallback(() => {
         setCount(count => count + 1)
-        console.log('increment render')
     }, []);
 
     const decrement = useCallback(() => {
         setCount(count => count - 1)
-        console.log('decrement render')
     }, []);
 
     const changeColor = useCallback(() => {
         setColor(color => !color)
-        console.log('color render')
     }, []);
-
-    console.log('parent render')
+    
     return (
           <div className='Counter'>
-                <div style={{color: color ? 'green': 'red'}}>{count}</div>
+              <p>Counter Page</p>
+                <p style={{color: color ? 'green': 'red'}}>{count}</p>
                 <Buttons increment={increment} decrement={decrement} changeColor={changeColor}/>
           </div>
     );
