@@ -1,12 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector} from 'react-redux';
 
-export default function ImageBlock() {
-  const image = useSelector(state => (state));
-  console.log(image)
+function ImageBlock() {
+  const randomImage = useSelector(state => state);
   return (
       <div>
-          <img src={image} alt='Random'></img>
+          <img src={randomImage} alt="random image"/>
       </div>
   );
 }
+export default ImageBlock

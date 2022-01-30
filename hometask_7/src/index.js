@@ -9,7 +9,6 @@ import thunk from 'redux-thunk';
 import reducerImage from './reducers/reducerImage';
 
 const store = createStore(reducerImage, applyMiddleware(thunk));
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store ={store}>
