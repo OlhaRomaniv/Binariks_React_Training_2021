@@ -1,13 +1,12 @@
 import React from 'react';
+import fetchAction from '../actions/fetchAction';
+import { useDispatch} from 'react-redux';
 
-function changeImage(){
-    fetch('https://dog.ceo/api/breeds/image/random')
-    .then(data => data.json())
-};
 export default function ChangeImage() {
+    const dispatch = useDispatch();
   return (
       <div>
-          <button onClick={changeImage}>Change</button>
+          <button onClick={() => dispatch(fetchAction())}>Change</button>
       </div>
   );
 }
