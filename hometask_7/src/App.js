@@ -1,12 +1,18 @@
+import React, { Suspense } from 'react';
 import './App.css';
-import ChangeImage from './Components/ChangeImage.';
-import ImageBlock from './Components/ImageBlock';
+
+const ImageBlock = React.lazy(()=> import ('./Components/ImageBlock'));
+const ChangeImage = React.lazy(()=> import ('./Components/ChangeImage'));
 
 function App() {
   return (
     <div className="App">
-      <ImageBlock/>
-      <ChangeImage/>
+      <Suspense fallback={<h3>Loading...</h3>}>
+        <ImageBlock/>
+      </Suspense>
+      <Suspense fallback={<h3>Loading...</h3>}>
+        <ChangeImage/>
+      </Suspense>
     </div>
   );
 }

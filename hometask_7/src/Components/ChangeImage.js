@@ -1,6 +1,7 @@
 import React from 'react';
 import fetchAction from '../actions/fetchAction';
 import { useDispatch} from 'react-redux';
+import './ChangeImage.css';
 
 export default function ChangeImage() {
     const dispatch = useDispatch();

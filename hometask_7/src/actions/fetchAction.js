@@ -1,4 +1,4 @@
-const addImage = (data) => ({ type: 'ADD_IMAGE', data })
+const addImage = (data) => ({ type: 'ADD_IMAGE', data });
 
 export default function fetchAction() {
     return (dispatch) => {

@@ -4,7 +4,7 @@ import { useSelector} from 'react-redux';
 function ImageBlock() {
   const randomImage = useSelector(state => state);
   return (
-      <div>
+      <div className='Image'>
           <img src={randomImage} alt="random image"/>
       </div>
   );
