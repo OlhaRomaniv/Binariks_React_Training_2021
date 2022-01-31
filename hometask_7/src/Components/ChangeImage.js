@@ -1,13 +1,18 @@
 import React from 'react';
-import fetchAction from '../actions/fetchAction';
+import fetchApi from '../actions/fetchAction';
 import { useDispatch} from 'react-redux';
 import './ChangeImage.css';
 
 export default function ChangeImage() {
     const dispatch = useDispatch();
+
+    const dispatchApi = () =>{
+        dispatch(fetchApi())
+    };
+    
   return (
       <div>
-          <button onClick={() => dispatch(fetchAction())}>Change</button>
+          <button onClick={dispatchApi}>Change</button>
       </div>
   );
 }
