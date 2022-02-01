@@ -55,16 +55,4 @@ function Users() {
   );
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     userData: state.users
-//   };
-// };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     fetchUsers: () => dispatch(fetchApi())
-//   };
-// };
-
 export default Users;
