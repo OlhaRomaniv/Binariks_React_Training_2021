@@ -1,10 +1,15 @@
-import React from 'react';
-import './App.css';
-import Users from './features/users/Users'
+import React, { Suspense } from 'react';
+import './App.css'
+import { Oval } from  'react-loader-spinner'
+
+const Users = React.lazy(() => import('./features/users/Users'))
+
 function App() {
   return (
     <div className="App">
-      <Users/>
+       <Suspense fallback={<Oval/>}>
+          <Users/>
+      </Suspense>
     </div>
   );
 }

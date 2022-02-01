@@ -1,14 +1,25 @@
+import { FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE } from "./userTypes";
+
 const initialState = {
-    name: "",
-    gender: "",
-    age: 0,
-    email: "",
-    picture: null
+    users: [],
+    error: ''
 }
 
-export default function reducerImage(state = initialState, action) {
+export default function reducerUsers(state = initialState, action) {
     switch (action.type) {
-        case 'GET_USERS':
-            return {...state, state: action.data }
+        case FETCH_USERS_SUCCESS:
+            return {
+                loading: false,
+                users: action.payload,
+                error: ''
+            }
+        case FETCH_USERS_FAILURE:
+            return {
+                loading: false,
+                users: [],
+                error: action.payload
+            }
+        default:
+            return state
     }
 }
