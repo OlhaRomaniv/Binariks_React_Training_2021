@@ -2,14 +2,15 @@ import React from 'react';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { useDispatch, useSelector} from 'react-redux';
-import {fetchByMale, fetchByFemale} from "./fetchUsers"
+import {fetchByMale, fetchByFemale} from "./fetchUsers";
 
 function Users() {
+
   const dispatch = useDispatch();
   const users = useSelector(state => state.users);
   const dispatchMale = () => dispatch(fetchByMale());
   const dispatchFemale = () => dispatch(fetchByFemale());
-  console.log(users)
+
   return (
       <div>
         <Tabs>

@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
-import './App.css'
-import { Oval } from  'react-loader-spinner'
+import './App.css';
+import { Oval } from  'react-loader-spinner';
 
-const Users = React.lazy(() => import('./features/users/Users'))
+const Users = React.lazy(() => import('./features/users/Users'));
 
 function App() {
   return (
